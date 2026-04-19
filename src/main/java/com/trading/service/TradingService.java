@@ -6,7 +6,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
+/**
+ * MODULE II – Exception Handling (try/catch/finally), Data Stream Handling,
+ *              Lambda expressions (Predicate, Function, Consumer)
+ * MODULE IV – Lambda expressions, Collection framework, Spring Boot Service layer
+ *
+ * Core business logic for placing buy/sell orders.
+ * Lambda expressions (Module II/IV) are used for validation and transformation.
+ * finally block (Module II) ensures audit logging always runs.
+ */
 @Service
 public class TradingService {
     
@@ -28,23 +40,44 @@ public class TradingService {
 
     @Transactional // Ensures the entire method completes successfully; if any error occurs, all database changes are rolled back
     public Order placeOrder(Order order) {
-        // Retrieve the live Stock object from the database using its ID
-        Stock stock = stockRepository.findById(order.getStock().getId())
-            .orElseThrow(() -> new IllegalArgumentException("Stock not found"));
-            
-        // Validate that order quantity makes sense
-        if (order.getQuantity() <= 0) {
+        // ── Lambda Predicate (Module II / IV) ──────────────────────────────────
+        // Predicate<T> is a functional interface: takes one argument, returns boolean.
+        // Lambda syntax: (param) -> expression
+        Predicate<Order> hasValidQuantity = o -> o.getQuantity() > 0;
+        Predicate<Order> hasBuyType       = o -> o.getOrderType() == OrderType.BUY;
+        Predicate<Order> hasSellType      = o -> o.getOrderType() == OrderType.SELL;
+
+        // ── Lambda Function (Module IV) ────────────────────────────────────────
+        // Function<T,R>: takes T, returns R. Used to compute total cost from an Order.
+        Function<Order, Double> computeTotalCost = o ->
+            o.getQuantity() * stockRepository.findById(o.getStock().getId())
+                .map(Stock::getCurrentPrice).orElse(0.0);
+
+        // ── Lambda Consumer (Module IV) ────────────────────────────────────────
+        // Consumer<T>: takes one argument, returns nothing — used for side effects.
+        Consumer<String> auditLogger = msg -> System.out.println("[AUDIT] " + msg);
+
+        // Validate quantity using the Predicate lambda
+        if (!hasValidQuantity.test(order)) {
             throw new IllegalArgumentException("Quantity must be greater than zero.");
         }
 
-        // Freeze the current market price of the stock for this transaction
-        double currentPrice = stock.getCurrentPrice();
-        // Calculate the total value of this transaction
-        double totalCost = currentPrice * order.getQuantity();
-        User user = order.getUser();
+        // Retrieve the live Stock object from the database using its ID
+        Stock stock = stockRepository.findById(order.getStock().getId())
+            .orElseThrow(() -> new IllegalArgumentException("Stock not found"));
 
-        // ---------------- BUY ORDER LOGIC ----------------
-        if (order.getOrderType() == OrderType.BUY) {
+        // Freeze current price and compute total cost
+        double currentPrice = stock.getCurrentPrice();
+        double totalCost    = currentPrice * order.getQuantity();
+        User   user         = order.getUser();
+
+        // ── try/finally (Module II — Exception Handling) ──────────────────────
+        // The finally block ALWAYS runs — even if an exception is thrown.
+        // Used here as an audit trail: log the attempt regardless of outcome.
+        try {
+
+        // ── BUY ORDER LOGIC ────────────────────────────────────────────────────
+        if (hasBuyType.test(order)) { // Use Predicate lambda instead of == comparison
             // Check if user has enough liquid cash in their simulated wallet
             if (user.getBalance() < totalCost) {
                 // If not, instantly reject the order
@@ -54,9 +87,9 @@ public class TradingService {
             user.setBalance(user.getBalance() - totalCost);
             // Update their portfolio to reflect the new stock ownership
             updatePortfolio(user, stock, order.getQuantity(), currentPrice, true);
-            
-        // ---------------- SELL ORDER LOGIC ----------------
-        } else if (order.getOrderType() == OrderType.SELL) {
+
+        // ── SELL ORDER LOGIC ───────────────────────────────────────────────────
+        } else if (hasSellType.test(order)) { // Use Predicate lambda
             // Find all stocks owned by this user
             List<Portfolio> portfolios = portfolioRepository.findByUser(user);
             // Look for the specific stock they are trying to sell
@@ -64,12 +97,12 @@ public class TradingService {
                     .filter(p -> p.getStock().getId().equals(stock.getId()))
                     .findFirst()
                     .orElseThrow(() -> new IllegalArgumentException("You do not own any shares of " + stock.getSymbol()));
-                    
+
             // Ensure they are not trying to sell more shares than they actually own
             if (portfolio.getQuantity() < order.getQuantity()) {
                 throw new IllegalArgumentException("Insufficient shares. You only own " + portfolio.getQuantity() + " shares of " + stock.getSymbol());
             }
-            
+
             // Add the proceeds from the sale back into the user's cash balance
             user.setBalance(user.getBalance() + totalCost);
             // Remove the sold stocks from their portfolio
@@ -86,22 +119,29 @@ public class TradingService {
         order.setFilledQuantity(order.getQuantity());
         // Save the order to DB
         Order savedOrder = orderRepository.save(order);
-        
+
         // Generate a Trade record for history tracking
         Trade trade = new Trade(
-            order.getOrderType() == OrderType.BUY ? savedOrder : null, // Set buy order info if it was a buy
-            order.getOrderType() == OrderType.SELL ? savedOrder : null, // Set sell order info if it was a sell
+            order.getOrderType() == OrderType.BUY  ? savedOrder : null,
+            order.getOrderType() == OrderType.SELL ? savedOrder : null,
             stock,
             currentPrice,
             order.getQuantity()
         );
         // Save the Trade history
         tradeRepository.save(trade);
-        
-        // Console log for server-side monitoring
-        System.out.println("Trade Executed: " + order.getOrderType() + " " + order.getQuantity() + " " + stock.getSymbol() + " at ₹" + currentPrice);
-        
+
         return savedOrder;
+
+        } finally {
+            // ── finally block (Module II) ──────────────────────────────────────
+            // This runs whether the order succeeded OR an exception was thrown.
+            // Consumer lambda used for audit side-effect logging.
+            auditLogger.accept("placeOrder called: "
+                + order.getOrderType() + " " + order.getQuantity()
+                + " × " + (order.getStock() != null ? order.getStock().getId() : "?")
+                + " | User: " + (user != null ? user.getUsername() : "unknown"));
+        }
     }
 
     // Helper method to keep user's portfolio accurately synced after trades

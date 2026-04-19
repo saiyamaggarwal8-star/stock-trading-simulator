@@ -79,6 +79,21 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-client</artifactId>
         </dependency>
+
+        <!-- WebSocket (Module IV — WebSockets, Spring MVC)
+             Provides STOMP over WebSocket support for live price broadcasting.
+             Includes spring-websocket + spring-messaging. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Actuator (Module IV — Microservices with Spring Boot)
+             Exposes production-ready endpoints: /actuator/health, /actuator/info, /actuator/metrics -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

@@ -44,6 +44,20 @@ public class MarketSimulator {
                     .filter(s -> !s.getSymbol().endsWith("_OLD"))
                     .toList();
 
+            // ── Anonymous Class (Module II) ───────────────────────────────────
+            // An anonymous class implementing Comparator<Stock> — defined and
+            // instantiated in-line without giving it a class name.
+            // Used to sort stocks alphabetically before processing.
+            java.util.Comparator<Stock> alphabeticComparator = new java.util.Comparator<Stock>() {
+                @Override
+                public int compare(Stock a, Stock b) {
+                    // String.compareTo demonstrates String method usage (Module I)
+                    return a.getSymbol().compareTo(b.getSymbol());
+                }
+            };
+            java.util.List<Stock> sortedStocks = new java.util.ArrayList<>(stocks);
+            sortedStocks.sort(alphabeticComparator); // Sort using the anonymous comparator
+
             // Iterate through every active stock to update its price
             for (Stock stock : stocks) {
                 try {
@@ -77,9 +91,15 @@ public class MarketSimulator {
                                 double pctChange = ((regularMarketPrice - previousClose) / previousClose) * 100.0;
                                 stock.setPercentChange(Math.round(pctChange * 100.0) / 100.0);
                             }
-                            // Persist updated price to DB
-                            stockRepository.save(stock);
-                            logger.info("Yahoo Finance: {} = ₹{} ({:+.2f}%)", stock.getSymbol(), regularMarketPrice, stock.getPercentChange());
+
+                            // ── synchronized block (Module III — Synchronization) ────────────
+                            // Ensures that updating priceCache and saving to DB happen atomically
+                            // relative to any other thread that might be reading this stock.
+                            // 'this' is the lock object — only one thread runs this block at a time.
+                            synchronized (this) {
+                                stockRepository.save(stock); // Safe: only one thread saves at a time
+                            }
+                            logger.info("Yahoo Finance: {} = ₹{}", stock.getSymbol(), regularMarketPrice);
                         }
                     }
                     // Delay slightly to prevent rate-limiting by Yahoo APIs
