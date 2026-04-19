@@ -1,0 +1,975 @@
+Apache Maven 3.9.13 (39d686bd50d8e054301e3a68ad44781df6f80dda)
+Maven home: /Users/mahismac/.sdkman/candidates/maven/current
+Java version: 25.0.1, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home
+Default locale: en_IN, platform encoding: UTF-8
+OS name: "mac os x", version: "26.2", arch: "aarch64", family: "mac"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.annotation.* < plexus.core
+[DEBUG]   Imported: javax.annotation.security.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.graph < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.util < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.fusesource.jansi.* < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.event.* < plexus.core
+[DEBUG]   Imported: org.slf4j.helpers.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[DEBUG] Created adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gaecv, file-gav, file-hgaecv, file-hgav, file-static, gaecv, gav, static]
+[INFO] Error stacktraces are turned on.
+[DEBUG] Message scheme: color
+[DEBUG] Message styles: debug info warning error success failure strong mojo project
+[DEBUG] Reading global settings from /Users/mahismac/.sdkman/candidates/maven/current/conf/settings.xml
+[DEBUG] Reading user settings from /Users/mahismac/.m2/settings.xml
+[DEBUG] Reading global toolchains from /Users/mahismac/.sdkman/candidates/maven/current/conf/toolchains.xml
+[DEBUG] Reading user toolchains from /Users/mahismac/.m2/toolchains.xml
+[DEBUG] Using local repository at /Users/mahismac/.m2/repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for /Users/mahismac/.m2/repository
+[INFO] Scanning for projects...
+[DEBUG] Extension realms for project com.trading:trading-simulator:jar:1.0-SNAPSHOT: (none)
+[DEBUG] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Resolving plugin prefix javafx from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Creating adapter using nameMapper 'gaecv' and factory 'rwlock-local'
+[DEBUG] Could not find metadata org.openjfx/maven-metadata.xml in local (/Users/mahismac/.m2/repository)
+[DEBUG] Skipped remote request for org.openjfx/maven-metadata.xml, locally cached metadata up-to-date
+[DEBUG] Could not find metadata org.apache.maven.plugins/maven-metadata.xml in local (/Users/mahismac/.m2/repository)
+[DEBUG] Skipped remote request for org.apache.maven.plugins/maven-metadata.xml, locally cached metadata up-to-date
+[DEBUG] Could not find metadata org.codehaus.mojo/maven-metadata.xml in local (/Users/mahismac/.m2/repository)
+[DEBUG] Skipped remote request for org.codehaus.mojo/maven-metadata.xml, locally cached metadata up-to-date
+[DEBUG] Resolved plugin prefix javafx to org.openjfx:javafx-maven-plugin from repository central
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: com.trading:trading-simulator:jar:1.0-SNAPSHOT
+[DEBUG] Tasks:   [clean, javafx:run]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] -------------------< com.trading:trading-simulator >--------------------
+[INFO] Building trading-simulator 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Resolving plugin prefix javafx from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Could not find metadata org.openjfx/maven-metadata.xml in local (/Users/mahismac/.m2/repository)
+[DEBUG] Skipped remote request for org.openjfx/maven-metadata.xml, locally cached metadata up-to-date
+[DEBUG] Could not find metadata org.apache.maven.plugins/maven-metadata.xml in local (/Users/mahismac/.m2/repository)
+[DEBUG] Skipped remote request for org.apache.maven.plugins/maven-metadata.xml, locally cached metadata up-to-date
+[DEBUG] Could not find metadata org.codehaus.mojo/maven-metadata.xml in local (/Users/mahismac/.m2/repository)
+[DEBUG] Skipped remote request for org.codehaus.mojo/maven-metadata.xml, locally cached metadata up-to-date
+[DEBUG] Resolved plugin prefix javafx to org.openjfx:javafx-maven-plugin from repository central
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       com.trading:trading-simulator:1.0-SNAPSHOT
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [runtime]
+[DEBUG] Repositories (dependencies): [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean (default-clean)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <directory default-value="${project.build.directory}"/>
+  <excludeDefaultDirectories default-value="false">${maven.clean.excludeDefaultDirectories}</excludeDefaultDirectories>
+  <failOnError default-value="true">${maven.clean.failOnError}</failOnError>
+  <fast default-value="false">${maven.clean.fast}</fast>
+  <fastDir>${maven.clean.fastDir}</fastDir>
+  <fastMode default-value="background">${maven.clean.fastMode}</fastMode>
+  <followSymLinks default-value="false">${maven.clean.followSymLinks}</followSymLinks>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <reportDirectory default-value="${project.build.outputDirectory}"/>
+  <retryOnError default-value="true">${maven.clean.retryOnError}</retryOnError>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.clean.skip}</skip>
+  <testOutputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <verbose>${maven.clean.verbose}</verbose>
+</configuration>
+[DEBUG] --- init fork of com.trading:trading-simulator:1.0-SNAPSHOT for org.openjfx:javafx-maven-plugin:0.0.8:run (default-cli) ---
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [compile]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.4.0:resources (default-resources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <resources default-value="${project.resources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.resources.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.compileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <createMissingPackageInfoClass default-value="true">${maven.compiler.createMissingPackageInfoClass}</createMissingPackageInfoClass>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debugFileName default-value="javac"/>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <enablePreview default-value="false">${maven.compiler.enablePreview}</enablePreview>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedSourcesDirectory default-value="${project.build.directory}/generated-sources/annotations"/>
+  <implicit>${maven.compiler.implicit}</implicit>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <parameters default-value="false">${maven.compiler.parameters}</parameters>
+  <project default-value="${project}"/>
+  <projectArtifact default-value="${project.artifact}"/>
+  <release>${maven.compiler.release}</release>
+  <session default-value="${session}"/>
+  <showCompilationChanges default-value="false">${maven.compiler.showCompilationChanges}</showCompilationChanges>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="true">${maven.compiler.showWarnings}</showWarnings>
+  <skipMain>${maven.main.skip}</skipMain>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.8">17</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.8">17</target>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] --- exit fork of com.trading:trading-simulator:1.0-SNAPSHOT for org.openjfx:javafx-maven-plugin:0.0.8:run (default-cli) ---
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.openjfx:javafx-maven-plugin:0.0.8:run (default-cli)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <async default-value="false">${javafx.async}</async>
+  <asyncDestroyOnShutdown default-value="true">${javafx.asyncDestroyOnShutdown}</asyncDestroyOnShutdown>
+  <basedir default-value="${basedir}"/>
+  <builddir default-value="${project.build.directory}"/>
+  <commandlineArgs>${javafx.args}</commandlineArgs>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <executable default-value="java">${javafx.executable}</executable>
+  <includePathExceptionsInClasspath default-value="false">${javafx.includePathExceptionsInClasspath}</includePathExceptionsInClasspath>
+  <mainClass>com.trading.App</mainClass>
+  <outputFile>${javafx.outputFile}</outputFile>
+  <project default-value="${project}"/>
+  <runtimePathOption>${javafx.runtimePathOption}</runtimePathOption>
+  <session default-value="${session}"/>
+  <skip default-value="false">${javafx.skip}</skip>
+  <workingDirectory>${javafx.workingDirectory}</workingDirectory>
+</configuration>
+[DEBUG] =======================================================================
+[WARNING] 6 problems were encountered while building the effective model for org.openjfx:javafx-controls:jar:17.0.6 during dependency collection step for project. Path to offending node from root:
+ -> com.trading:trading-simulator:jar:1.0-SNAPSHOT
+ => org.openjfx:javafx-controls:jar:17.0.6 (compile)
+Problems
+* 'profiles.profile.id' Duplicate activation for profile linux-x86_64 @ org.openjfx:javafx:17.0.6
+* 'profiles.profile.id' Duplicate activation for profile linux-aarch64 @ org.openjfx:javafx:17.0.6
+* 'profiles.profile.id' Duplicate activation for profile macosx-x86_64 @ org.openjfx:javafx:17.0.6
+* 'profiles.profile.id' Duplicate activation for profile macosx-aarch64 @ org.openjfx:javafx:17.0.6
+* 'profiles.profile.id' Duplicate activation for profile windows-x86_64 @ org.openjfx:javafx:17.0.6
+* 'profiles.profile.id' Duplicate activation for profile windows-x86 @ org.openjfx:javafx:17.0.6
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=381875, ConflictMarker.markTime=117042, ConflictMarker.nodeCount=57, ConflictIdSorter.graphTime=199958, ConflictIdSorter.topsortTime=223833, ConflictIdSorter.conflictIdCount=39, ConflictIdSorter.conflictIdCycleCount=4, ConflictResolver.totalTime=3920708, ConflictResolver.conflictItemCount=51, DfDependencyCollector.collectTime=124587208, DfDependencyCollector.transformTime=5835875}
+[DEBUG] com.trading:trading-simulator:jar:1.0-SNAPSHOT
+[DEBUG]    org.openjfx:javafx-controls:jar:17.0.6:compile
+[DEBUG]       org.openjfx:javafx-controls:jar:mac-aarch64:17.0.6:compile
+[DEBUG]       org.openjfx:javafx-graphics:jar:17.0.6:compile
+[DEBUG]          org.openjfx:javafx-graphics:jar:mac-aarch64:17.0.6:compile
+[DEBUG]          org.openjfx:javafx-base:jar:17.0.6:compile
+[DEBUG]             org.openjfx:javafx-base:jar:mac-aarch64:17.0.6:compile
+[DEBUG]    org.openjfx:javafx-fxml:jar:17.0.6:compile
+[DEBUG]       org.openjfx:javafx-fxml:jar:mac-aarch64:17.0.6:compile
+[DEBUG]    org.hibernate.orm:hibernate-core:jar:6.2.7.Final:compile
+[DEBUG]       jakarta.persistence:jakarta.persistence-api:jar:3.1.0:compile
+[DEBUG]       jakarta.transaction:jakarta.transaction-api:jar:2.0.1:compile
+[DEBUG]       org.jboss.logging:jboss-logging:jar:3.5.0.Final:runtime
+[DEBUG]       org.hibernate.common:hibernate-commons-annotations:jar:6.0.6.Final:runtime
+[DEBUG]       io.smallrye:jandex:jar:3.0.5:runtime
+[DEBUG]       com.fasterxml:classmate:jar:1.5.1:runtime
+[DEBUG]       net.bytebuddy:byte-buddy:jar:1.12.18:runtime
+[DEBUG]       jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.0:runtime
+[DEBUG]          jakarta.activation:jakarta.activation-api:jar:2.1.0:runtime
+[DEBUG]       org.glassfish.jaxb:jaxb-runtime:jar:4.0.2:runtime
+[DEBUG]          org.glassfish.jaxb:jaxb-core:jar:4.0.2:runtime
+[DEBUG]             org.eclipse.angus:angus-activation:jar:2.0.0:runtime
+[DEBUG]             org.glassfish.jaxb:txw2:jar:4.0.2:runtime
+[DEBUG]             com.sun.istack:istack-commons-runtime:jar:4.1.1:runtime
+[DEBUG]       jakarta.inject:jakarta.inject-api:jar:2.0.1:runtime
+[DEBUG]       org.antlr:antlr4-runtime:jar:4.10.1:runtime
+[DEBUG]    com.mysql:mysql-connector-j:jar:8.0.33:compile
+[DEBUG]       com.google.protobuf:protobuf-java:jar:3.21.9:compile
+[DEBUG]    com.fasterxml.jackson.core:jackson-databind:jar:2.15.2:compile
+[DEBUG]       com.fasterxml.jackson.core:jackson-annotations:jar:2.15.2:compile
+[DEBUG]       com.fasterxml.jackson.core:jackson-core:jar:2.15.2:compile
+[DEBUG]    org.apache.logging.log4j:log4j-api:jar:2.20.0:compile
+[DEBUG]    org.apache.logging.log4j:log4j-core:jar:2.20.0:compile
+[DEBUG]    org.mindrot:jbcrypt:jar:0.4:compile
+[DEBUG]    org.junit.jupiter:junit-jupiter-engine:jar:5.10.0:test
+[DEBUG]       org.junit.platform:junit-platform-engine:jar:1.10.0:test
+[DEBUG]          org.opentest4j:opentest4j:jar:1.3.0:test
+[DEBUG]          org.junit.platform:junit-platform-commons:jar:1.10.0:test
+[DEBUG]       org.junit.jupiter:junit-jupiter-api:jar:5.10.0:test
+[DEBUG]       org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ trading-simulator ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=14417, ConflictMarker.markTime=40583, ConflictMarker.nodeCount=3, ConflictIdSorter.graphTime=6625, ConflictIdSorter.topsortTime=6625, ConflictIdSorter.conflictIdCount=3, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=121167, ConflictResolver.conflictItemCount=3, DfDependencyCollector.collectTime=10832375, DfDependencyCollector.transformTime=199000}
+[DEBUG] org.apache.maven.plugins:maven-clean-plugin:jar:3.2.0
+[DEBUG]    org.apache.maven.shared:maven-shared-utils:jar:3.3.4:compile
+[DEBUG]       commons-io:commons-io:jar:2.6:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.2.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.2.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.2.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-clean-plugin:jar:3.2.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.3.4
+[DEBUG]   Included: commons-io:commons-io:jar:2.6
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-clean-plugin:3.2.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean:default-clean' with basic configurator -->
+[DEBUG]   (f) directory = /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target
+[DEBUG]   (f) excludeDefaultDirectories = false
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) fast = false
+[DEBUG]   (f) fastMode = background
+[DEBUG]   (f) followSymLinks = false
+[DEBUG]   (f) outputDirectory = /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes
+[DEBUG]   (f) reportDirectory = /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes
+[DEBUG]   (f) retryOnError = true
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@7139bd31
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) testOutputDirectory = /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/test-classes
+[DEBUG] -- end configuration --
+[INFO] Deleting /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/maven-status/maven-compiler-plugin/compile/default-compile
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/maven-status/maven-compiler-plugin/compile
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/maven-status/maven-compiler-plugin
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/maven-status
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/service/OrderMatchingEngine.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/service/IndicatorCalculator.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/service/MarketSimulator.class
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/service
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/App.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/model/OrderStatus.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/model/Stock.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/model/OrderType.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/model/Transaction.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/model/Portfolio.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/model/User.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/model/Order.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/model/BaseEntity.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/model/Trade.class
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/model
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/controller/DashboardController.class
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/controller
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/dao/GenericDao.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/dao/HibernateUtil.class
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/dao
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/util/SettingsUtil.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/util/SettingsUtil$AppSettings.class
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/util/PasswordUtil.class
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading/util
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com/trading
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/com
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/fxml/dashboard.fxml
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/fxml
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/hibernate.cfg.xml
+[INFO] Deleting file /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/css/style.css
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/css
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/generated-sources/annotations
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/generated-sources
+[INFO] Deleting directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target
+[DEBUG] Skipping non-existing directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes
+[DEBUG] Skipping non-existing directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/test-classes
+[DEBUG] Skipping non-existing directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes
+[INFO] 
+[INFO] >>> javafx:0.0.8:run (default-cli) > process-classes @ trading-simulator >>>
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=156083, ConflictMarker.markTime=106417, ConflictMarker.nodeCount=57, ConflictIdSorter.graphTime=57417, ConflictIdSorter.topsortTime=96833, ConflictIdSorter.conflictIdCount=39, ConflictIdSorter.conflictIdCycleCount=4, ConflictResolver.totalTime=1019125, ConflictResolver.conflictItemCount=51, DfDependencyCollector.collectTime=2209625, DfDependencyCollector.transformTime=1486208}
+[DEBUG] com.trading:trading-simulator:jar:1.0-SNAPSHOT
+[DEBUG]    org.openjfx:javafx-controls:jar:17.0.6:compile
+[DEBUG]       org.openjfx:javafx-controls:jar:mac-aarch64:17.0.6:compile
+[DEBUG]       org.openjfx:javafx-graphics:jar:17.0.6:compile
+[DEBUG]          org.openjfx:javafx-graphics:jar:mac-aarch64:17.0.6:compile
+[DEBUG]          org.openjfx:javafx-base:jar:17.0.6:compile
+[DEBUG]             org.openjfx:javafx-base:jar:mac-aarch64:17.0.6:compile
+[DEBUG]    org.openjfx:javafx-fxml:jar:17.0.6:compile
+[DEBUG]       org.openjfx:javafx-fxml:jar:mac-aarch64:17.0.6:compile
+[DEBUG]    org.hibernate.orm:hibernate-core:jar:6.2.7.Final:compile
+[DEBUG]       jakarta.persistence:jakarta.persistence-api:jar:3.1.0:compile
+[DEBUG]       jakarta.transaction:jakarta.transaction-api:jar:2.0.1:compile
+[DEBUG]       org.jboss.logging:jboss-logging:jar:3.5.0.Final:runtime
+[DEBUG]       org.hibernate.common:hibernate-commons-annotations:jar:6.0.6.Final:runtime
+[DEBUG]       io.smallrye:jandex:jar:3.0.5:runtime
+[DEBUG]       com.fasterxml:classmate:jar:1.5.1:runtime
+[DEBUG]       net.bytebuddy:byte-buddy:jar:1.12.18:runtime
+[DEBUG]       jakarta.xml.bind:jakarta.xml.bind-api:jar:4.0.0:runtime
+[DEBUG]          jakarta.activation:jakarta.activation-api:jar:2.1.0:runtime
+[DEBUG]       org.glassfish.jaxb:jaxb-runtime:jar:4.0.2:runtime
+[DEBUG]          org.glassfish.jaxb:jaxb-core:jar:4.0.2:runtime
+[DEBUG]             org.eclipse.angus:angus-activation:jar:2.0.0:runtime
+[DEBUG]             org.glassfish.jaxb:txw2:jar:4.0.2:runtime
+[DEBUG]             com.sun.istack:istack-commons-runtime:jar:4.1.1:runtime
+[DEBUG]       jakarta.inject:jakarta.inject-api:jar:2.0.1:runtime
+[DEBUG]       org.antlr:antlr4-runtime:jar:4.10.1:runtime
+[DEBUG]    com.mysql:mysql-connector-j:jar:8.0.33:compile
+[DEBUG]       com.google.protobuf:protobuf-java:jar:3.21.9:compile
+[DEBUG]    com.fasterxml.jackson.core:jackson-databind:jar:2.15.2:compile
+[DEBUG]       com.fasterxml.jackson.core:jackson-annotations:jar:2.15.2:compile
+[DEBUG]       com.fasterxml.jackson.core:jackson-core:jar:2.15.2:compile
+[DEBUG]    org.apache.logging.log4j:log4j-api:jar:2.20.0:compile
+[DEBUG]    org.apache.logging.log4j:log4j-core:jar:2.20.0:compile
+[DEBUG]    org.mindrot:jbcrypt:jar:0.4:compile
+[DEBUG]    org.junit.jupiter:junit-jupiter-engine:jar:5.10.0:test
+[DEBUG]       org.junit.platform:junit-platform-engine:jar:1.10.0:test
+[DEBUG]          org.opentest4j:opentest4j:jar:1.3.0:test
+[DEBUG]          org.junit.platform:junit-platform-commons:jar:1.10.0:test
+[DEBUG]       org.junit.jupiter:junit-jupiter-api:jar:5.10.0:test
+[DEBUG]       org.apiguardian:apiguardian-api:jar:1.1.2:test
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ trading-simulator ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=86250, ConflictMarker.markTime=64125, ConflictMarker.nodeCount=13, ConflictIdSorter.graphTime=19000, ConflictIdSorter.topsortTime=16416, ConflictIdSorter.conflictIdCount=10, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=245000, ConflictResolver.conflictItemCount=13, DfDependencyCollector.collectTime=35682833, DfDependencyCollector.transformTime=453584}
+[DEBUG] org.apache.maven.plugins:maven-resources-plugin:jar:3.4.0
+[DEBUG]    org.apache.maven.shared:maven-filtering:jar:3.4.0:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.36:compile
+[DEBUG]       org.sonatype.plexus:plexus-build-api:jar:0.0.7:compile
+[DEBUG]       org.codehaus.plexus:plexus-utils:jar:4.0.2:compile (version managed from default)
+[DEBUG]       org.codehaus.plexus:plexus-xml:jar:3.0.1:compile (version managed from default)
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.27:compile
+[DEBUG]       commons-io:commons-io:jar:2.16.1:compile
+[DEBUG]    org.apache.commons:commons-lang3:jar:3.20.0:compile
+[DEBUG]    javax.inject:javax.inject:jar:1:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.4.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.4.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.4.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-resources-plugin:jar:3.4.0
+[DEBUG]   Included: org.apache.maven.shared:maven-filtering:jar:3.4.0
+[DEBUG]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.7
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:4.0.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-xml:jar:3.0.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.27
+[DEBUG]   Included: commons-io:commons-io:jar:2.16.1
+[DEBUG]   Included: org.apache.commons:commons-lang3:jar:3.20.0
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-resources-plugin:3.4.0:resources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:3.4.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-resources-plugin:3.4.0:resources:default-resources' with basic configurator -->
+[DEBUG]   (f) addDefaultExcludes = true
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (f) fileNameFiltering = false
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: com.trading:trading-simulator:1.0-SNAPSHOT @ /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/pom.xml
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/resources, PatternSet [includes: {}, excludes: {}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@7139bd31
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) supportMultiLineFiltering = false
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = true
+[DEBUG] -- end configuration --
+[DEBUG] properties used:
+[DEBUG] apple.awt.application.name: Launcher
+[DEBUG] classworlds.conf: /Users/mahismac/.sdkman/candidates/maven/current/bin/m2.conf
+[DEBUG] env.ANTIGRAVITY_AGENT: 1
+[DEBUG] env.ANTIGRAVITY_CLI_ALIAS: agy
+[DEBUG] env.COLORTERM: truecolor
+[DEBUG] env.COMMAND_MODE: unix2003
+[DEBUG] env.GIT_ASKPASS: /Applications/Antigravity.app/Contents/Resources/app/extensions/git/dist/askpass.sh
+[DEBUG] env.HOME: /Users/mahismac
+[DEBUG] env.LANG: C.UTF-8
+[DEBUG] env.LOGNAME: mahismac
+[DEBUG] env.MAVEN_CMD_LINE_ARGS:  clean javafx:run -X
+[DEBUG] env.MAVEN_HOME: /Users/mahismac/.sdkman/candidates/maven/current
+[DEBUG] env.MAVEN_PROJECTBASEDIR: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator
+[DEBUG] env.MallocNanoZone: 0
+[DEBUG] env.OLDPWD: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator
+[DEBUG] env.OSLogRateLimit: 64
+[DEBUG] env.PAGER: cat
+[DEBUG] env.PATH: /Users/mahismac/.sdkman/candidates/maven/current/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/opt/local/bin:/opt/local/sbin
+[DEBUG] env.PWD: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator
+[DEBUG] env.SDKMAN_BROKER_API: https://broker.sdkman.io
+[DEBUG] env.SDKMAN_CANDIDATES_API: https://api.sdkman.io/2
+[DEBUG] env.SDKMAN_CANDIDATES_DIR: /Users/mahismac/.sdkman/candidates
+[DEBUG] env.SDKMAN_DIR: /Users/mahismac/.sdkman
+[DEBUG] env.SDKMAN_PLATFORM: darwinarm64
+[DEBUG] env.SHELL: /bin/zsh
+[DEBUG] env.SHLVL: 1
+[DEBUG] env.SSH_AUTH_SOCK: /private/tmp/com.apple.launchd.74VL2wj5qZ/Listeners
+[DEBUG] env.TERM: xterm-256color
+[DEBUG] env.TERM_PROGRAM: vscode
+[DEBUG] env.TERM_PROGRAM_VERSION: 1.107.0
+[DEBUG] env.TMPDIR: /var/folders/j9/mn6qx5wn2jn7z23xrkjm_vz80000gn/T/
+[DEBUG] env.USER: mahismac
+[DEBUG] env.USER_ZDOTDIR: /Users/mahismac
+[DEBUG] env.VSCODE_GIT_ASKPASS_EXTRA_ARGS: 
+[DEBUG] env.VSCODE_GIT_ASKPASS_MAIN: /Applications/Antigravity.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
+[DEBUG] env.VSCODE_GIT_ASKPASS_NODE: /Applications/Antigravity.app/Contents/Frameworks/Antigravity Helper (Plugin).app/Contents/MacOS/Antigravity Helper (Plugin)
+[DEBUG] env.VSCODE_GIT_IPC_HANDLE: /var/folders/j9/mn6qx5wn2jn7z23xrkjm_vz80000gn/T/vscode-git-894905c835.sock
+[DEBUG] env.VSCODE_INJECTION: 1
+[DEBUG] env.VSCODE_LOGIN_INITIALIZED: 1
+[DEBUG] env.VSCODE_PROFILE_INITIALIZED: 1
+[DEBUG] env.VSCODE_PYTHON_AUTOACTIVATE_GUARD: 1
+[DEBUG] env.XPC_FLAGS: 0x0
+[DEBUG] env.XPC_SERVICE_NAME: 0
+[DEBUG] env.ZDOTDIR: /Users/mahismac
+[DEBUG] env.__CFBundleIdentifier: com.google.antigravity
+[DEBUG] env.__CF_USER_TEXT_ENCODING: 0x1F5:0x0:0x0
+[DEBUG] env.binary_input: /Users/mahismac/.sdkman/tmp/maven-3.9.13.bin
+[DEBUG] env.local: 
+[DEBUG] env.zip_output: /Users/mahismac/.sdkman/tmp/maven-3.9.13.zip
+[DEBUG] file.encoding: UTF-8
+[DEBUG] file.separator: /
+[DEBUG] ftp.nonProxyHosts: local|*.local|169.254/16|*.169.254/16
+[DEBUG] hibernate.version: 6.2.7.Final
+[DEBUG] http.nonProxyHosts: local|*.local|169.254/16|*.169.254/16
+[DEBUG] jackson.version: 2.15.2
+[DEBUG] java.class.path: /Users/mahismac/.sdkman/candidates/maven/current/boot/plexus-classworlds-2.9.0.jar
+[DEBUG] java.class.version: 69.0
+[DEBUG] java.home: /Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home
+[DEBUG] java.io.tmpdir: /var/folders/j9/mn6qx5wn2jn7z23xrkjm_vz80000gn/T/
+[DEBUG] java.library.path: /Users/mahismac/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+[DEBUG] java.runtime.name: Java(TM) SE Runtime Environment
+[DEBUG] java.runtime.version: 25.0.1+8-LTS-27
+[DEBUG] java.specification.name: Java Platform API Specification
+[DEBUG] java.specification.vendor: Oracle Corporation
+[DEBUG] java.specification.version: 25
+[DEBUG] java.vendor: Oracle Corporation
+[DEBUG] java.vendor.url: https://java.oracle.com/
+[DEBUG] java.vendor.url.bug: https://bugreport.java.com/bugreport/
+[DEBUG] java.version: 25.0.1
+[DEBUG] java.version.date: 2025-10-21
+[DEBUG] java.vm.compressedOopsMode: Zero based
+[DEBUG] java.vm.info: mixed mode, sharing
+[DEBUG] java.vm.name: Java HotSpot(TM) 64-Bit Server VM
+[DEBUG] java.vm.specification.name: Java Virtual Machine Specification
+[DEBUG] java.vm.specification.vendor: Oracle Corporation
+[DEBUG] java.vm.specification.version: 25
+[DEBUG] java.vm.vendor: Oracle Corporation
+[DEBUG] java.vm.version: 25.0.1+8-LTS-27
+[DEBUG] javafx.version: 17.0.6
+[DEBUG] jbcrypt.version: 0.4
+[DEBUG] jdk.debug: release
+[DEBUG] junit.version: 5.10.0
+[DEBUG] library.jansi.path: /Users/mahismac/.sdkman/candidates/maven/current/lib/jansi-native
+[DEBUG] line.separator: 
+
+[DEBUG] log4j.version: 2.20.0
+[DEBUG] maven.build.timestamp: 2026-03-10T11:06:02Z
+[DEBUG] maven.build.version: Apache Maven 3.9.13 (39d686bd50d8e054301e3a68ad44781df6f80dda)
+[DEBUG] maven.compiler.source: 17
+[DEBUG] maven.compiler.target: 17
+[DEBUG] maven.conf: /Users/mahismac/.sdkman/candidates/maven/current/conf
+[DEBUG] maven.home: /Users/mahismac/.sdkman/candidates/maven/current
+[DEBUG] maven.multiModuleProjectDirectory: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator
+[DEBUG] maven.version: 3.9.13
+[DEBUG] mysql.version: 8.0.33
+[DEBUG] native.encoding: UTF-8
+[DEBUG] os.arch: aarch64
+[DEBUG] os.name: Mac OS X
+[DEBUG] os.version: 26.2
+[DEBUG] path.separator: :
+[DEBUG] project.baseUri: file:/Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/
+[DEBUG] project.build.sourceEncoding: UTF-8
+[DEBUG] socksNonProxyHosts: local|*.local|169.254/16|*.169.254/16
+[DEBUG] stderr.encoding: UTF-8
+[DEBUG] stdin.encoding: UTF-8
+[DEBUG] stdout.encoding: UTF-8
+[DEBUG] sun.arch.data.model: 64
+[DEBUG] sun.boot.library.path: /Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home/lib
+[DEBUG] sun.cpu.endian: little
+[DEBUG] sun.io.unicode.encoding: UnicodeBig
+[DEBUG] sun.java.command: org.codehaus.plexus.classworlds.launcher.Launcher clean javafx:run -X
+[DEBUG] sun.java.launcher: SUN_STANDARD
+[DEBUG] sun.jnu.encoding: UTF-8
+[DEBUG] sun.management.compiler: HotSpot 64-Bit Tiered Compilers
+[DEBUG] user.country: IN
+[DEBUG] user.dir: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator
+[DEBUG] user.home: /Users/mahismac
+[DEBUG] user.language: en
+[DEBUG] user.name: mahismac
+[DEBUG] Using 'UTF-8' encoding to copy filtered resources.
+[DEBUG] Using 'UTF-8' encoding to copy filtered properties files.
+[DEBUG] resource with targetPath null
+directory /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/resources
+excludes []
+includes []
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[DEBUG] Copying file css/style.css
+[DEBUG] file style.css has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'style.css'.
+[DEBUG] copy /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/resources/css/style.css to /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/css/style.css
+[DEBUG] Copying file hibernate.cfg.xml
+[DEBUG] file hibernate.cfg.xml has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'hibernate.cfg.xml'.
+[DEBUG] copy /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/resources/hibernate.cfg.xml to /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/hibernate.cfg.xml
+[DEBUG] Copying file fxml/dashboard.fxml
+[DEBUG] file dashboard.fxml has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'dashboard.fxml'.
+[DEBUG] copy /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/resources/fxml/dashboard.fxml to /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes/fxml/dashboard.fxml
+[DEBUG] no user filter components
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ trading-simulator ---
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for apache.snapshots (http://repository.apache.org/snapshots).
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=38875, ConflictMarker.markTime=26375, ConflictMarker.nodeCount=17, ConflictIdSorter.graphTime=16291, ConflictIdSorter.topsortTime=14834, ConflictIdSorter.conflictIdCount=12, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=206166, ConflictResolver.conflictItemCount=17, DfDependencyCollector.collectTime=23830000, DfDependencyCollector.transformTime=317667}
+[DEBUG] org.apache.maven.plugins:maven-compiler-plugin:jar:3.11.0
+[DEBUG]    org.apache.maven.shared:maven-shared-utils:jar:3.3.4:compile
+[DEBUG]       commons-io:commons-io:jar:2.6:compile
+[DEBUG]    org.apache.maven.shared:maven-shared-incremental:jar:1.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile
+[DEBUG]    org.codehaus.plexus:plexus-java:jar:1.1.2:compile
+[DEBUG]       org.ow2.asm:asm:jar:9.4:compile
+[DEBUG]       com.thoughtworks.qdox:qdox:jar:2.0.3:compile (version managed from default)
+[DEBUG]    org.codehaus.plexus:plexus-compiler-api:jar:2.13.0:compile
+[DEBUG]       org.codehaus.plexus:plexus-utils:jar:3.5.0:compile (version managed from default)
+[DEBUG]    org.codehaus.plexus:plexus-compiler-manager:jar:2.13.0:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-javac:jar:2.13.0:runtime
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-compiler-plugin:jar:3.11.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.3.4
+[DEBUG]   Included: commons-io:commons-io:jar:2.6
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-incremental:jar:1.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.5.5
+[DEBUG]   Included: org.codehaus.plexus:plexus-java:jar:1.1.2
+[DEBUG]   Included: org.ow2.asm:asm:jar:9.4
+[DEBUG]   Included: com.thoughtworks.qdox:qdox:jar:2.0.3
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-api:jar:2.13.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.5.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-manager:jar:2.13.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-javac:jar:2.13.0
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile:default-compile' with basic configurator -->
+[DEBUG]   (f) basedir = /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator
+[DEBUG]   (f) buildDirectory = /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target
+[DEBUG]   (f) compilePath = [/Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes, /Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6-mac-aarch64.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-mac-aarch64.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6-mac-aarch64.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-mac-aarch64.jar, /Users/mahismac/.m2/repository/org/hibernate/orm/hibernate-core/6.2.7.Final/hibernate-core-6.2.7.Final.jar, /Users/mahismac/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar, /Users/mahismac/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar, /Users/mahismac/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar, /Users/mahismac/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar, /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar, /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar, /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar, /Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar, /Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar, /Users/mahismac/.m2/repository/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar]
+[DEBUG]   (f) compileSourceRoots = [/Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java]
+[DEBUG]   (f) compilerId = javac
+[DEBUG]   (f) createMissingPackageInfoClass = true
+[DEBUG]   (f) debug = true
+[DEBUG]   (f) debugFileName = javac
+[DEBUG]   (f) enablePreview = false
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) failOnWarning = false
+[DEBUG]   (f) forceJavacCompilerUse = false
+[DEBUG]   (f) fork = false
+[DEBUG]   (f) generatedSourcesDirectory = /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/generated-sources/annotations
+[DEBUG]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile {execution: default-compile}
+[DEBUG]   (f) optimize = false
+[DEBUG]   (f) outputDirectory = /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes
+[DEBUG]   (f) parameters = false
+[DEBUG]   (f) project = MavenProject: com.trading:trading-simulator:1.0-SNAPSHOT @ /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/pom.xml
+[DEBUG]   (f) projectArtifact = com.trading:trading-simulator:jar:1.0-SNAPSHOT
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@7139bd31
+[DEBUG]   (f) showCompilationChanges = false
+[DEBUG]   (f) showDeprecation = false
+[DEBUG]   (f) showWarnings = true
+[DEBUG]   (f) skipMultiThreadWarning = false
+[DEBUG]   (f) source = 17
+[DEBUG]   (f) staleMillis = 0
+[DEBUG]   (s) target = 17
+[DEBUG]   (f) useIncrementalCompilation = true
+[DEBUG]   (f) verbose = false
+[DEBUG] -- end configuration --
+[DEBUG] Using compiler 'javac'.
+[DEBUG] Adding /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/generated-sources/annotations to compile source roots:
+  /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java
+[DEBUG] New compile source roots:
+  /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java
+  /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/generated-sources/annotations
+[DEBUG] CompilerReuseStrategy: reuseCreated
+[DEBUG] useIncrementalCompilation enabled
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/util/SettingsUtil.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/service/MarketSimulator.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/util/PasswordUtil.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/dao/GenericDao.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/model/OrderType.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/App.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/model/Stock.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/model/Transaction.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/model/BaseEntity.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/service/IndicatorCalculator.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/controller/DashboardController.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/service/OrderMatchingEngine.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/model/Trade.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/dao/HibernateUtil.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/model/Order.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/model/User.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/model/OrderStatus.java
+[DEBUG] Stale source detected: /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java/com/trading/model/Portfolio.java
+[INFO] Changes detected - recompiling the module! :source
+[DEBUG] Classpath:
+[DEBUG]  /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6-mac-aarch64.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-mac-aarch64.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6-mac-aarch64.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-mac-aarch64.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/hibernate/orm/hibernate-core/6.2.7.Final/hibernate-core-6.2.7.Final.jar
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar
+[DEBUG]  /Users/mahismac/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar
+[DEBUG]  /Users/mahismac/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar
+[DEBUG]  /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar
+[DEBUG]  /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar
+[DEBUG]  /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar
+[DEBUG] Source roots:
+[DEBUG]  /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java
+[DEBUG]  /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/generated-sources/annotations
+[DEBUG] Command line options:
+[DEBUG] -d /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes -classpath /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes:/Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6-mac-aarch64.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-mac-aarch64.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6-mac-aarch64.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-mac-aarch64.jar:/Users/mahismac/.m2/repository/org/hibernate/orm/hibernate-core/6.2.7.Final/hibernate-core-6.2.7.Final.jar:/Users/mahismac/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/mahismac/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/mahismac/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/Users/mahismac/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar:/Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar:/Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar:/Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar:/Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar:/Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar:/Users/mahismac/.m2/repository/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar: -sourcepath /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/src/main/java:/Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/generated-sources/annotations: -s /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/generated-sources/annotations -g -target 17 -source 17 -encoding UTF-8
+[DEBUG] incrementalBuildHelper#beforeRebuildExecution
+[INFO] Compiling 18 source files with javac [debug target 17] to target/classes
+[DEBUG] incrementalBuildHelper#afterRebuildExecution
+[WARNING] location of system modules is not set in conjunction with -source 17
+  not setting the location of system modules may lead to class files that cannot run on JDK 17
+    --release 17 is recommended instead of -source 17 -target 17 because it sets the location of system modules automatically
+[INFO] 
+[INFO] <<< javafx:0.0.8:run (default-cli) < process-classes @ trading-simulator <<<
+[INFO] 
+[INFO] 
+[INFO] --- javafx:0.0.8:run (default-cli) @ trading-simulator ---
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for repository.jboss.org (http://repository.jboss.org/maven2).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for snapshots.jboss.org (http://snapshots.jboss.org/maven2).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for oss.sonatype.org/jboss-snapshots (http://oss.sonatype.org/content/repositories/jboss-snapshots).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for ow2-snapshot (http://repository.ow2.org/nexus/content/repositories/snapshots).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for codehaus.snapshots (http://snapshots.repository.codehaus.org).
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for codehaus-snapshots (http://nexus.codehaus.org/snapshots/).
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=236333, ConflictMarker.markTime=122209, ConflictMarker.nodeCount=96, ConflictIdSorter.graphTime=118167, ConflictIdSorter.topsortTime=59417, ConflictIdSorter.conflictIdCount=48, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1566625, ConflictResolver.conflictItemCount=94, DfDependencyCollector.collectTime=119603084, DfDependencyCollector.transformTime=2132666}
+[DEBUG] org.openjfx:javafx-maven-plugin:jar:0.0.8
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:3.6.0:compile
+[DEBUG]       org.apache.maven:maven-model:jar:3.6.0:compile
+[DEBUG]       org.apache.maven:maven-artifact:jar:3.6.0:compile
+[DEBUG]       org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.3.3:compile
+[DEBUG]          javax.enterprise:cdi-api:jar:1.0:compile
+[DEBUG]             javax.annotation:jsr250-api:jar:1.0:compile
+[DEBUG]       org.codehaus.plexus:plexus-utils:jar:3.1.0:compile
+[DEBUG]       org.codehaus.plexus:plexus-classworlds:jar:2.5.2:compile
+[DEBUG]    org.codehaus.plexus:plexus-java:jar:0.9.11:compile
+[DEBUG]       org.ow2.asm:asm:jar:7.0-beta:compile
+[DEBUG]       com.thoughtworks.qdox:qdox:jar:2.0-M9:compile
+[DEBUG]    org.codehaus.plexus:plexus-archiver:jar:3.6.0:compile
+[DEBUG]       org.codehaus.plexus:plexus-io:jar:3.0.1:compile
+[DEBUG]          commons-io:commons-io:jar:2.6:compile
+[DEBUG]       org.apache.commons:commons-compress:jar:1.16.1:compile
+[DEBUG]          org.objenesis:objenesis:jar:2.6:compile
+[DEBUG]       org.iq80.snappy:snappy:jar:0.4:compile
+[DEBUG]       org.tukaani:xz:jar:1.8:runtime
+[DEBUG]    org.apache.commons:commons-exec:jar:1.3:compile
+[DEBUG]    org.apache.maven:maven-core:jar:3.6.0:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:3.6.0:compile
+[DEBUG]       org.apache.maven:maven-settings-builder:jar:3.6.0:compile
+[DEBUG]          org.codehaus.plexus:plexus-interpolation:jar:1.25:compile
+[DEBUG]          org.sonatype.plexus:plexus-sec-dispatcher:jar:1.4:compile
+[DEBUG]             org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[DEBUG]       org.apache.maven:maven-builder-support:jar:3.6.0:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:3.6.0:compile
+[DEBUG]       org.apache.maven:maven-model-builder:jar:3.6.0:compile
+[DEBUG]       org.apache.maven:maven-resolver-provider:jar:3.6.0:compile
+[DEBUG]          org.slf4j:slf4j-api:jar:1.7.25:compile
+[DEBUG]       org.apache.maven.resolver:maven-resolver-impl:jar:1.3.1:compile
+[DEBUG]       org.apache.maven.resolver:maven-resolver-api:jar:1.3.1:compile
+[DEBUG]       org.apache.maven.resolver:maven-resolver-spi:jar:1.3.1:compile
+[DEBUG]       org.apache.maven.resolver:maven-resolver-util:jar:1.3.1:compile
+[DEBUG]       org.apache.maven.shared:maven-shared-utils:jar:3.2.1:compile
+[DEBUG]       org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.3.3:compile
+[DEBUG]       com.google.inject:guice:jar:no_aop:4.2.1:compile
+[DEBUG]          aopalliance:aopalliance:jar:1.0:compile
+[DEBUG]          com.google.guava:guava:jar:25.1-android:compile
+[DEBUG]             com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[DEBUG]             org.checkerframework:checker-compat-qual:jar:2.0.0:compile
+[DEBUG]             com.google.errorprone:error_prone_annotations:jar:2.1.3:compile
+[DEBUG]             com.google.j2objc:j2objc-annotations:jar:1.1:compile
+[DEBUG]             org.codehaus.mojo:animal-sniffer-annotations:jar:1.14:compile
+[DEBUG]       javax.inject:javax.inject:jar:1:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.7.1:compile
+[DEBUG]       org.apache.commons:commons-lang3:jar:3.8.1:compile
+[DEBUG] Created new class realm plugin>org.openjfx:javafx-maven-plugin:0.0.8
+[DEBUG] Importing foreign packages into class realm plugin>org.openjfx:javafx-maven-plugin:0.0.8
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.openjfx:javafx-maven-plugin:0.0.8
+[DEBUG]   Included: org.openjfx:javafx-maven-plugin:jar:0.0.8
+[DEBUG]   Included: javax.enterprise:cdi-api:jar:1.0
+[DEBUG]   Included: javax.annotation:jsr250-api:jar:1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-java:jar:0.9.11
+[DEBUG]   Included: org.ow2.asm:asm:jar:7.0-beta
+[DEBUG]   Included: com.thoughtworks.qdox:qdox:jar:2.0-M9
+[DEBUG]   Included: org.codehaus.plexus:plexus-archiver:jar:3.6.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-io:jar:3.0.1
+[DEBUG]   Included: commons-io:commons-io:jar:2.6
+[DEBUG]   Included: org.apache.commons:commons-compress:jar:1.16.1
+[DEBUG]   Included: org.objenesis:objenesis:jar:2.6
+[DEBUG]   Included: org.iq80.snappy:snappy:jar:0.4
+[DEBUG]   Included: org.tukaani:xz:jar:1.8
+[DEBUG]   Included: org.apache.commons:commons-exec:jar:1.3
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.25
+[DEBUG]   Included: org.sonatype.plexus:plexus-sec-dispatcher:jar:1.4
+[DEBUG]   Included: org.sonatype.plexus:plexus-cipher:jar:1.4
+[DEBUG]   Included: org.apache.maven:maven-builder-support:jar:3.6.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.2.1
+[DEBUG]   Included: org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.3.3
+[DEBUG]   Included: com.google.inject:guice:jar:no_aop:4.2.1
+[DEBUG]   Included: aopalliance:aopalliance:jar:1.0
+[DEBUG]   Included: com.google.guava:guava:jar:25.1-android
+[DEBUG]   Included: com.google.code.findbugs:jsr305:jar:3.0.2
+[DEBUG]   Included: org.checkerframework:checker-compat-qual:jar:2.0.0
+[DEBUG]   Included: com.google.errorprone:error_prone_annotations:jar:2.1.3
+[DEBUG]   Included: com.google.j2objc:j2objc-annotations:jar:1.1
+[DEBUG]   Included: org.codehaus.mojo:animal-sniffer-annotations:jar:1.14
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.7.1
+[DEBUG]   Included: org.apache.commons:commons-lang3:jar:3.8.1
+[DEBUG] Loading mojo org.openjfx:javafx-maven-plugin:0.0.8:run from plugin realm ClassRealm[plugin>org.openjfx:javafx-maven-plugin:0.0.8, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487]
+[DEBUG] Configuring mojo execution 'org.openjfx:javafx-maven-plugin:0.0.8:run:default-cli' with basic configurator -->
+[DEBUG]   (f) async = false
+[DEBUG]   (f) asyncDestroyOnShutdown = true
+[DEBUG]   (f) basedir = /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator
+[DEBUG]   (f) builddir = /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target
+[DEBUG]   (f) compilePath = [/Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes, /Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6-mac-aarch64.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-mac-aarch64.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6-mac-aarch64.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.jar, /Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-mac-aarch64.jar, /Users/mahismac/.m2/repository/org/hibernate/orm/hibernate-core/6.2.7.Final/hibernate-core-6.2.7.Final.jar, /Users/mahismac/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar, /Users/mahismac/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar, /Users/mahismac/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar, /Users/mahismac/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar, /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar, /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar, /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar, /Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar, /Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar, /Users/mahismac/.m2/repository/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar]
+[DEBUG]   (f) executable = java
+[DEBUG]   (f) includePathExceptionsInClasspath = false
+[DEBUG]   (f) mainClass = com.trading.App
+[DEBUG]   (f) project = MavenProject: com.trading:trading-simulator:1.0-SNAPSHOT @ /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/pom.xml
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@7139bd31
+[DEBUG]   (f) skip = false
+[DEBUG] -- end configuration --
+[DEBUG] Executable [java]
+[DEBUG] Total dependencyArtifacts: 34
+[DEBUG] module descriptor path: null
+[DEBUG] Classpath:26
+[DEBUG]  /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes
+[DEBUG]  /Users/mahismac/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar
+[DEBUG]  /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar
+[DEBUG]  /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar
+[DEBUG]  /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar
+[DEBUG]  /Users/mahismac/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar
+[DEBUG]  /Users/mahismac/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar
+[DEBUG]  /Users/mahismac/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar
+[DEBUG]  /Users/mahismac/.m2/repository/io/smallrye/jandex/3.0.5/jandex-3.0.5.jar
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar
+[DEBUG]  /Users/mahismac/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/hibernate/orm/hibernate-core/6.2.7.Final/hibernate-core-6.2.7.Final.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar
+[DEBUG] Modulepath: 8
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6-mac-aarch64.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6-mac-aarch64.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-mac-aarch64.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-mac-aarch64.jar
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.jar
+[DEBUG] pathElements: 34
+[DEBUG]  /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes :: null
+[DEBUG]  /Users/mahismac/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar :: com.fasterxml.classmate
+[DEBUG]  /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar :: com.fasterxml.jackson.annotation
+[DEBUG]  /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar :: com.fasterxml.jackson.core
+[DEBUG]  /Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar :: com.fasterxml.jackson.databind
+[DEBUG]  /Users/mahismac/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar :: com.google.protobuf
+[DEBUG]  /Users/mahismac/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar :: mysql.connector.j
+[DEBUG]  /Users/mahismac/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar :: com.sun.istack.runtime
+[DEBUG]  /Users/mahismac/.m2/repository/io/smallrye/jandex/3.0.5/jandex-3.0.5.jar :: org.jboss.jandex
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar :: jakarta.activation
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar :: jakarta.inject
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar :: jakarta.persistence
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar :: jakarta.transaction
+[DEBUG]  /Users/mahismac/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar :: jakarta.xml.bind
+[DEBUG]  /Users/mahismac/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar :: net.bytebuddy
+[DEBUG]  /Users/mahismac/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar :: org.antlr.antlr4.runtime
+[DEBUG]  /Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar :: org.apache.logging.log4j
+[DEBUG]  /Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar :: org.apache.logging.log4j.core
+[DEBUG]  /Users/mahismac/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar :: org.eclipse.angus.activation
+[DEBUG]  /Users/mahismac/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar :: org.glassfish.jaxb.core
+[DEBUG]  /Users/mahismac/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar :: org.glassfish.jaxb.runtime
+[DEBUG]  /Users/mahismac/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar :: com.sun.xml.txw2
+[DEBUG]  /Users/mahismac/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar :: org.hibernate.commons.annotations
+[DEBUG]  /Users/mahismac/.m2/repository/org/hibernate/orm/hibernate-core/6.2.7.Final/hibernate-core-6.2.7.Final.jar :: org.hibernate.orm.core
+[DEBUG]  /Users/mahismac/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar :: org.jboss.logging
+[DEBUG]  /Users/mahismac/.m2/repository/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar :: jbcrypt
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6-mac-aarch64.jar :: javafx.base
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.jar :: javafx.baseEmpty
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6-mac-aarch64.jar :: javafx.controls
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.jar :: javafx.controlsEmpty
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-mac-aarch64.jar :: javafx.fxml
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.jar :: javafx.fxmlEmpty
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-mac-aarch64.jar :: javafx.graphics
+[DEBUG]  /Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.jar :: javafx.graphicsEmpty
+[DEBUG] Executing command line: [java, --module-path, /Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6-mac-aarch64.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-base/17.0.6/javafx-base-17.0.6.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6-mac-aarch64.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-controls/17.0.6/javafx-controls-17.0.6.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6-mac-aarch64.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-fxml/17.0.6/javafx-fxml-17.0.6.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-mac-aarch64.jar:/Users/mahismac/.m2/repository/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6.jar, --add-modules, javafx.base,javafx.controls,javafx.fxml,javafx.graphics, -classpath, /Users/mahismac/.gemini/antigravity/scratch/TradingStimulator/target/classes:/Users/mahismac/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar:/Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar:/Users/mahismac/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar:/Users/mahismac/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar:/Users/mahismac/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/Users/mahismac/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar:/Users/mahismac/.m2/repository/io/smallrye/jandex/3.0.5/jandex-3.0.5.jar:/Users/mahismac/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar:/Users/mahismac/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/mahismac/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/mahismac/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/mahismac/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar:/Users/mahismac/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar:/Users/mahismac/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar:/Users/mahismac/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar:/Users/mahismac/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar:/Users/mahismac/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar:/Users/mahismac/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar:/Users/mahismac/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar:/Users/mahismac/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/mahismac/.m2/repository/org/hibernate/orm/hibernate-core/6.2.7.Final/hibernate-core-6.2.7.Final.jar:/Users/mahismac/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar:/Users/mahismac/.m2/repository/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar, com.trading.App]
+Hibernate: 
+    alter table orders 
+       modify column createdAt  datetime(6)
+Hibernate: 
+    alter table orders 
+       modify column updatedAt  datetime(6)
+Hibernate: 
+    alter table orders 
+       modify column orderType  enum ('BUY','SELL') not null
+Hibernate: 
+    alter table orders 
+       modify column price  float(53) not null
+Hibernate: 
+    alter table orders 
+       modify column status  enum ('CANCELLED','FILLED','PARTIALLY_FILLED','PENDING') not null
+Hibernate: 
+    alter table portfolios 
+       modify column createdAt  datetime(6)
+Hibernate: 
+    alter table portfolios 
+       modify column updatedAt  datetime(6)
+Hibernate: 
+    alter table portfolios 
+       modify column averagePrice  float(53) not null
+Hibernate: 
+    alter table stocks 
+       modify column createdAt  datetime(6)
+Hibernate: 
+    alter table stocks 
+       modify column updatedAt  datetime(6)
+Hibernate: 
+    alter table stocks 
+       modify column currentPrice  float(53) not null
+Hibernate: 
+    alter table trades 
+       modify column createdAt  datetime(6)
+Hibernate: 
+    alter table trades 
+       modify column updatedAt  datetime(6)
+Hibernate: 
+    alter table trades 
+       modify column price  float(53) not null
+Hibernate: 
+    alter table transactions 
+       modify column createdAt  datetime(6)
+Hibernate: 
+    alter table transactions 
+       modify column updatedAt  datetime(6)
+Hibernate: 
+    alter table transactions 
+       modify column amount  float(53) not null
+Hibernate: 
+    alter table users 
+       modify column createdAt  datetime(6)
+Hibernate: 
+    alter table users 
+       modify column updatedAt  datetime(6)
+Hibernate: 
+    alter table users 
+       modify column balance  float(53) not null
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.702 s
+[INFO] Finished at: 2026-03-10T16:36:10+05:30
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Shutting down adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gaecv, file-gav, file-hgaecv, file-hgav, file-static, gaecv, gav, static]
+[DEBUG] Shutting down 'file-lock' factory
+[DEBUG] Shutting down 'rwlock-local' factory
+[DEBUG] Shutting down 'semaphore-local' factory
+[DEBUG] Shutting down 'noop' factory
