@@ -431,6 +431,7 @@ function App() {
               >
                 🗺️ Tour
               </button>
+              <ChatBot username={user?.username} />
               <Bell size={20} color="var(--text-secondary)" style={{ cursor: 'pointer' }} />
               <div className="user-profile" onClick={() => setShowSideMenu(true)} style={{ cursor: 'pointer' }}>
                 <div className="avatar-circle"></div>
@@ -1054,7 +1055,6 @@ function App() {
               </button>
             </nav>
           </div>
-          <ChatBot username={user?.username} />
         </div>
       {showLearning && <LearningCenter onClose={() => setShowLearning(false)} />}
       {showTour && <OnboardingTour username={user?.username} onClose={() => setShowTour(false)} onOpenLearning={() => setShowLearning(true)} />}

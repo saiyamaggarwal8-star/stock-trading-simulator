@@ -1,51 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Sparkles, User, Minus } from 'lucide-react';
-
-const KNOWLEDGE_BASE = [
-  {
-    keywords: ['buy', 'how to buy', 'purchase', 'buying'],
-    response: "To buy a stock, select it from the 'NSE Market' list on the left. Then look at the 'Place Order' panel on the right, enter the number of shares you want, and click the green BUY button! Make sure you have enough Balance."
-  },
-  {
-    keywords: ['sell', 'how to sell', 'selling', 'short'],
-    response: "To sell, you must first own the stock! Select a stock you own from your 'My Portfolio' list, enter the quantity in the complete 'Place Order' panel on the right, and click the red SELL button."
-  },
-  {
-    keywords: ['rsi', 'relative strength', 'overbought', 'oversold'],
-    response: "RSI (Relative Strength Index) helps you spot if a stock is overbought (>70) or oversold (<30). If it's below 30, it might be a good time to buy! Click the 'RSI' button under the chart to turn it on."
-  },
-  {
-    keywords: ['sma', 'moving average', 'ema', 'trend'],
-    response: "SMA (Simple Moving Average) and EMA (Exponential) show the stock's trend. If the price is above the line, it's an uptrend (good to buy). If it's below, it's a downtrend. Try clicking the SMA button below the chart!"
-  },
-  {
-    keywords: ['pattern', 'cheat sheet', 'bullish', 'bearish', 'wedge', 'triangle'],
-    response: "Chart patterns predict future price movements! Use the 'Scan Patterns' button below the chart to find them automatically. You can read what they mean in the Pattern Cheat Sheet on the right."
-  },
-  {
-    keywords: ['what is a stock', 'stock market', 'explain stock'],
-    response: "A stock represents a tiny fraction of ownership in a company. When the company grows, your stock value goes up! You can learn all the basics by clicking the 📚 Learn button at the top to open the Learning Center."
-  },
-  {
-    keywords: ['balance', 'money', 'funds', 'cash'],
-    response: "You start with ₹1,00,000 in virtual cash. You can see your live balance at the top of the screen. Try to grow it by making smart trades!"
-  },
-  {
-    keywords: ['hello', 'hi', 'hey', 'greetings', 'nova'],
-    response: "Hello there! 👋 I'm Nova, your AI trading assistant. Ask me anything about how to trade, use the app, or understand technical indicators!"
-  },
-  {
-    keywords: ['thanks', 'thank you', 'thx'],
-    response: "You're very welcome! Happy trading! 🚀 Feel free to ask if you need anything else."
-  }
-];
-
-const DEFAULT_RESPONSES = [
-  "That's a great question! For detailed strategies, I recommend checking out our 📚 Learning Center at the top of the screen.",
-  "I'm still learning about that specific topic! Why don't you try asking me about how to buy/sell, or how to use indicators like RSI and SMA?",
-  "Interesting! As a trading simulation AI, I'd suggest focusing on the technical indicators below the chart to make your next move.",
-  "I don't have live news feeds right now, but you can always rely on the chart patterns! Try clicking 'Scan Patterns' to see what the chart is doing."
-];
+import { createPortal } from 'react-dom';
+import { MessageSquare, X, Send, Sparkles, User, Minus, Paperclip } from 'lucide-react';
+import axios from 'axios';
 
 export default function ChatBot({ username }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,8 +10,12 @@ export default function ChatBot({ username }) {
     { id: 1, sender: 'nova', text: `Hi ${username || 'Trader'}! I'm Nova. How can I help you dominate the market today?`, time: new Date() }
   ]);
   const [inputText, setInputText] = useState('');
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
   const [isTyping, setIsTyping] = useState(false);
+  
   const messagesEndRef = useRef(null);
+  const fileInputRef = useRef(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -67,80 +27,106 @@ export default function ChatBot({ username }) {
     }
   }, [messages, isOpen, isMinimized, isTyping]);
 
-  const getAiResponse = (text) => {
-    const lowerText = text.toLowerCase();
-    
-    // Check knowledge base
-    for (const item of KNOWLEDGE_BASE) {
-      if (item.keywords.some(kw => lowerText.includes(kw))) {
-        return item.response;
-      }
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setSelectedImage(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
     }
-    
-    // Fallback response
-    return DEFAULT_RESPONSES[Math.floor(Math.random() * DEFAULT_RESPONSES.length)];
   };
 
-  const handleSend = (e) => {
+  const removeImage = () => {
+    setSelectedImage(null);
+    setImagePreview(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
+  const handleSend = async (e) => {
     e?.preventDefault();
-    if (!inputText.trim()) return;
+    if (!inputText.trim() && !selectedImage) return;
 
     const userMsg = {
       id: Date.now(),
       sender: 'user',
-      text: inputText,
+      text: inputText || "What do you see in this image?",
+      image: imagePreview,
       time: new Date()
     };
 
     setMessages(prev => [...prev, userMsg]);
+    
+    const formData = new FormData();
+    formData.append('message', userMsg.text);
+    if (selectedImage) {
+      formData.append('image', selectedImage);
+    }
+
     setInputText('');
+    removeImage();
     setIsTyping(true);
 
-    // Simulate AI thinking delay
-    setTimeout(() => {
-      const responseText = getAiResponse(userMsg.text);
+    try {
+      const response = await axios.post('/api/chat', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      
       const aiMsg = {
         id: Date.now() + 1,
         sender: 'nova',
-        text: responseText,
+        text: response.data.reply,
         time: new Date()
       };
       setMessages(prev => [...prev, aiMsg]);
+    } catch (error) {
+      console.error('Error talking to Nova:', error);
+      const errorMsg = {
+        id: Date.now() + 1,
+        sender: 'nova',
+        text: "I'm having trouble connecting right now. Please check if your Gemini API key is configured or try again later.",
+        time: new Date()
+      };
+      setMessages(prev => [...prev, errorMsg]);
+    } finally {
       setIsTyping(false);
-    }, 1000 + Math.random() * 1000); // 1-2 second delay
+    }
   };
 
   const formatTime = (date) => {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
-  if (!isOpen) {
-    return (
-      <button 
-        onClick={() => { setIsOpen(true); setIsMinimized(false); }}
-        style={{
-          position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 9999,
-          width: '60px', height: '60px', borderRadius: '50%',
-          background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-          border: 'none', color: 'white', cursor: 'pointer',
-          boxShadow: '0 8px 30px rgba(59,130,246,0.4)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          animation: 'chat-bounce 2s infinite',
-          transition: 'transform 0.2s'
-        }}
-        onMouseOver={e => e.currentTarget.style.transform = 'scale(1.1)'}
-        onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
-      >
-        <MessageSquare size={28} />
-      </button>
-    );
-  }
+  const toggleBtn = (
+    <button
+      onClick={() => { setIsOpen(!isOpen); setIsMinimized(false); }}
+      style={{
+        display: 'flex', alignItems: 'center', gap: '0.4rem',
+        padding: '0.45rem 1rem', borderRadius: '8px',
+        background: 'linear-gradient(135deg, #8b5cf6, #d946ef)',
+        border: 'none', color: 'white', cursor: 'pointer',
+        fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.3px',
+        boxShadow: '0 4px 15px rgba(139,92,246,0.3)'
+      }}
+    >
+      <Sparkles size={16} /> Nova AI
+    </button>
+  );
 
   return (
-    <>
+    <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+      {toggleBtn}
+
+      {isOpen && createPortal(
       <div style={{
-        position: 'fixed', bottom: isMinimized ? '2rem' : '2rem', right: '2rem', zIndex: 9999,
-        width: '360px', height: isMinimized ? '60px' : '520px',
+        position: 'fixed', top: '80px', right: '2rem', zIndex: 99999,
+        width: '360px', height: isMinimized ? '60px' : '550px',
         background: '#0f172a',
         border: '1px solid rgba(59,130,246,0.3)',
         borderRadius: '20px',
@@ -199,7 +185,7 @@ export default function ChatBot({ username }) {
               background: '#050814'
             }}>
               <div style={{ textAlign: 'center', fontSize: '0.75rem', color: '#475569', marginBottom: '0.5rem' }}>
-                Chat started tonight
+                Chat powered by Gemini
               </div>
 
               {messages.map(msg => (
@@ -227,8 +213,15 @@ export default function ChatBot({ username }) {
                       color: '#f8fafc', fontSize: '0.85rem', lineHeight: 1.5,
                       borderRadius: msg.sender === 'user' ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
                       border: msg.sender === 'user' ? 'none' : '1px solid rgba(255,255,255,0.05)',
-                      boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+                      boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                      wordBreak: 'break-word',
+                      whiteSpace: 'pre-wrap'
                     }}>
+                      {msg.image && (
+                        <div style={{ marginBottom: msg.text ? '8px' : '0' }}>
+                          <img src={msg.image} alt="User Upload" style={{ maxWidth: '100%', borderRadius: '8px', maxHeight: '150px', objectFit: 'contain' }} />
+                        </div>
+                      )}
                       {msg.text}
                     </div>
                     <span style={{ fontSize: '0.65rem', color: '#475569', marginTop: '4px', padding: '0 4px' }}>
@@ -263,47 +256,87 @@ export default function ChatBot({ username }) {
             </div>
 
             {/* Input Area */}
-            <form onSubmit={handleSend} style={{
-              padding: '1rem', background: '#0f172a',
-              borderTop: '1px solid rgba(255,255,255,0.05)',
-              display: 'flex', gap: '0.5rem'
-            }}>
-              <input
-                type="text"
-                value={inputText}
-                onChange={(e) => setInputText(e.target.value)}
-                placeholder="Ask Nova anything..."
-                style={{
-                  flex: 1, padding: '0.75rem 1rem',
-                  background: 'rgba(255,255,255,0.03)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  borderRadius: '24px', color: 'white', fontSize: '0.85rem',
-                  outline: 'none'
-                }}
-              />
-              <button
-                type="submit"
-                disabled={!inputText.trim() || isTyping}
-                style={{
-                  width: '42px', height: '42px', borderRadius: '50%',
-                  background: inputText.trim() && !isTyping ? '#3b82f6' : 'rgba(255,255,255,0.1)',
-                  border: 'none', color: 'white', cursor: inputText.trim() && !isTyping ? 'pointer' : 'not-allowed',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  transition: 'background 0.2s'
-                }}
-              >
-                <Send size={16} style={{ marginLeft: '2px' }} />
-              </button>
-            </form>
+            <div style={{ background: '#0f172a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+              
+              {/* Image Preview above input */}
+              {imagePreview && (
+                <div style={{ padding: '0.5rem 1rem 0', position: 'relative', display: 'inline-block' }}>
+                  <div style={{ position: 'relative' }}>
+                    <img 
+                      src={imagePreview} 
+                      alt="Preview" 
+                      style={{ height: '60px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.2)' }} 
+                    />
+                    <button 
+                      onClick={removeImage}
+                      style={{ 
+                        position: 'absolute', top: '-6px', right: '-6px', 
+                        background: '#ef4444', color: 'white', border: 'none', 
+                        borderRadius: '50%', width: '18px', height: '18px', 
+                        display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' 
+                      }}
+                    >
+                      <X size={12} />
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              <form onSubmit={handleSend} style={{
+                padding: '1rem', 
+                display: 'flex', gap: '0.5rem', alignItems: 'center'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '24px', flex: 1, padding: '0 0.5rem' }}>
+                  <button 
+                    type="button" 
+                    onClick={() => fileInputRef.current?.click()}
+                    style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: '0.5rem', display: 'flex', alignItems: 'center' }}
+                    title="Attach Image"
+                  >
+                    <Paperclip size={18} />
+                  </button>
+                  <input 
+                    type="file" 
+                    accept="image/*" 
+                    ref={fileInputRef} 
+                    style={{ display: 'none' }} 
+                    onChange={handleImageChange}
+                  />
+                  <input
+                    type="text"
+                    value={inputText}
+                    onChange={(e) => setInputText(e.target.value)}
+                    placeholder="Ask Nova anything..."
+                    style={{
+                      flex: 1, padding: '0.75rem 0.5rem',
+                      background: 'transparent', border: 'none',
+                      color: 'white', fontSize: '0.85rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+                
+                <button
+                  type="submit"
+                  disabled={(!inputText.trim() && !selectedImage) || isTyping}
+                  style={{
+                    width: '42px', height: '42px', borderRadius: '50%', flexShrink: 0,
+                    background: ((inputText.trim() || selectedImage) && !isTyping) ? '#3b82f6' : 'rgba(255,255,255,0.1)',
+                    border: 'none', color: 'white', 
+                    cursor: ((inputText.trim() || selectedImage) && !isTyping) ? 'pointer' : 'not-allowed',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    transition: 'background 0.2s'
+                  }}
+                >
+                  <Send size={16} style={{ marginLeft: '2px' }} />
+                </button>
+              </form>
+            </div>
           </>
         )}
       </div>
-
+      , document.body)}
       <style>{`
-        @keyframes chat-bounce {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
         .dot-typing {
           width: 6px; height: 6px;
           background: #94a3b8;
@@ -315,6 +348,6 @@ export default function ChatBot({ username }) {
           40% { transform: scale(1); opacity: 1; }
         }
       `}</style>
-    </>
+    </div>
   );
 }
