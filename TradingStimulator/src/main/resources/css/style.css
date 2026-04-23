@@ -1,0 +1,155 @@
+/* 
+   Lavish Dark Mode Scheme 
+   Colors: Deep Navy, Neon Turquoise, Crimson Red, Slate Grey, Bright White
+*/
+
+.root-pane {
+    -fx-background-color: #0b0f19;
+    -fx-font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* Typography elements */
+.logo-text {
+    -fx-text-fill: #00e6e6;
+    -fx-font-size: 22px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 2px;
+}
+
+.status-text {
+    -fx-text-fill: #4caf50;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+}
+
+.section-header {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-padding: 0 0 10 0;
+}
+
+.chart-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.lbl-grey { -fx-text-fill: #8a9bb2; -fx-font-size: 14px; }
+.lbl-white { -fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-weight: bold; }
+
+/* Headers and Panels */
+.header-bar {
+    -fx-background-color: #121a2f;
+    -fx-border-color: #1f2940;
+    -fx-border-width: 0 0 1 0;
+}
+
+.sidebar {
+    -fx-background-color: #0d1321;
+    -fx-border-color: #1f2940;
+    -fx-border-width: 0 1 0 0;
+}
+
+.order-panel {
+    -fx-background-color: #121a2f;
+    -fx-border-color: #1f2940;
+    -fx-border-width: 0 0 0 1;
+}
+
+/* Glass table aesthetics */
+.glass-table {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.glass-table .column-header-background {
+    -fx-background-color: #1a233a;
+}
+.glass-table .column-header {
+    -fx-background-color: transparent;
+}
+.glass-table .column-header .label {
+    -fx-text-fill: #8a9bb2;
+    -fx-font-weight: bold;
+}
+.glass-table .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: #1f2940;
+    -fx-border-width: 0 0 1 0;
+}
+.glass-table .table-row-cell:odd {
+    -fx-background-color: #0f1524;
+}
+.glass-table .table-row-cell:selected {
+    -fx-background-color: #1f3a5e; /* Subdued highlight */
+}
+.glass-table .table-cell {
+    -fx-text-fill: #d1d5db;
+    -fx-font-family: "Monaco", "Consolas", monospace;
+    -fx-padding: 8px 5px;
+}
+
+/* Charts */
+.Lavish-chart .chart-plot-background {
+    -fx-background-color: #0b0f19;
+}
+.chart-vertical-grid-lines { -fx-stroke: transparent; }
+.chart-horizontal-grid-lines { -fx-stroke: #1f2940; -fx-stroke-dash-array: 2 5; }
+
+/* The line stroke for the price series */
+.default-color0.chart-series-line {
+    -fx-stroke: #00e6e6; /* Neon turquoise line */
+    -fx-stroke-width: 2px;
+}
+
+/* Form inputs */
+.form-label {
+    -fx-text-fill: #8a9bb2;
+    -fx-font-size: 12px;
+}
+.form-input {
+    -fx-background-color: #0b0f19;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #2c3e50;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px;
+    -fx-font-size: 14px;
+}
+.form-input:focused {
+    -fx-border-color: #00e6e6;
+}
+
+/* Buttons */
+.btn-buy {
+    -fx-background-color: #26a69a;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-padding: 10px;
+    -fx-cursor: hand;
+}
+.btn-buy:hover { -fx-background-color: #2bbdax; }
+
+.btn-sell {
+    -fx-background-color: #ef5350;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-padding: 10px;
+    -fx-cursor: hand;
+}
+.btn-sell:hover { -fx-background-color: #e57373; }
+
+.btn-indicator {
+    -fx-background-color: #1f2940;
+    -fx-text-fill: #8a9bb2;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15px; /* Pill shapes */
+    -fx-padding: 5px 12px;
+    -fx-cursor: hand;
+}
+.btn-indicator:hover {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: #ffffff;
+}

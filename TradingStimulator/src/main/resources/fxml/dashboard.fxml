@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Region?>
+
+<BorderPane styleClass="root-pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trading.controller.DashboardController">
+
+    <!-- TOP HEADER -->
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="20">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <Label styleClass="logo-text" text="TRADING SIMULATOR"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="statusLabel" styleClass="status-text" text="System Offline"/>
+        </HBox>
+    </top>
+
+    <!-- LEFT: Market Data -->
+    <left>
+        <VBox styleClass="sidebar" spacing="10" minWidth="300">
+            <padding><Insets top="20" right="15" bottom="20" left="15"/></padding>
+            <Label styleClass="section-header" text="Market Watch"/>
+            <TableView fx:id="marketTable" VBox.vgrow="ALWAYS" styleClass="glass-table">
+                <columns>
+                    <TableColumn fx:id="symbolCol" text="SYM" prefWidth="70"/>
+                    <TableColumn fx:id="companyCol" text="Company" prefWidth="130"/>
+                    <TableColumn fx:id="priceCol" text="Price" prefWidth="70"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </left>
+
+    <!-- CENTER: Charting -->
+    <center>
+        <VBox styleClass="main-content" spacing="20">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            
+            <HBox styleClass="chart-header" alignment="CENTER_LEFT" spacing="15">
+                 <Label styleClass="chart-title" text="AAPL - Apple Inc."/>
+                 <Region HBox.hgrow="ALWAYS" />
+                 <Button styleClass="btn-indicator" text="SMA"/>
+                 <Button styleClass="btn-indicator" text="EMA"/>
+                 <Button styleClass="btn-indicator" text="RSI"/>
+            </HBox>
+            
+            <VBox styleClass="chart-container" VBox.vgrow="ALWAYS">
+                <LineChart fx:id="priceChart" VBox.vgrow="ALWAYS" styleClass="lavish-chart">
+                    <xAxis>
+                        <NumberAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT" />
+                    </yAxis>
+                </LineChart>
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- RIGHT: Order Entry -->
+    <right>
+        <VBox styleClass="order-panel" spacing="15" minWidth="250">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <Label styleClass="section-header" text="Order Entry"/>
+            
+            <VBox styleClass="order-form" spacing="10">
+                <Label styleClass="form-label" text="Symbol"/>
+                <TextField promptText="e.g. AAPL" styleClass="form-input"/>
+                
+                <Label styleClass="form-label" text="Quantity"/>
+                <TextField promptText="0" styleClass="form-input"/>
+                
+                <Label styleClass="form-label" text="Price"/>
+                <TextField promptText="0.00" styleClass="form-input"/>
+                
+                <HBox spacing="10" alignment="CENTER">
+                    <padding><Insets top="10"/></padding>
+                    <Button styleClass="btn-buy" text="BUY" HBox.hgrow="ALWAYS" maxWidth="10000"/>
+                    <Button styleClass="btn-sell" text="SELL" HBox.hgrow="ALWAYS" maxWidth="10000"/>
+                </HBox>
+            </VBox>
+            
+            <VBox VBox.vgrow="ALWAYS"/>
+            <VBox styleClass="portfolio-summary" spacing="5">
+                <Label styleClass="section-header" text="Account"/>
+                <HBox><Label text="Balance:" styleClass="lbl-grey"/><Region HBox.hgrow="ALWAYS"/><Label text="$100,000.00" styleClass="lbl-white"/></HBox>
+                <HBox><Label text="Holdings:" styleClass="lbl-grey"/><Region HBox.hgrow="ALWAYS"/><Label text="$0.00" styleClass="lbl-white"/></HBox>
+            </VBox>
+        </VBox>
+    </right>
+
+</BorderPane>

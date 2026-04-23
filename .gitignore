@@ -1,0 +1,19 @@
+# Maven build output
+TradingStimulator/target/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# macOS metadata
+__MACOSX/
+.DS_Store
+
+# Spring Boot logs
+*.log
+logs/
+
+# Environment files
+*.env
+application-local.properties

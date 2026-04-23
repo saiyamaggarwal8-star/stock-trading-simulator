@@ -1,0 +1,46 @@
+# Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Node / React
+node_modules/
+dist/
+build/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+*.iws
+.settings/
+.classpath
+.project
+.nb-gradle/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+backend_current.log
+backend.log
+frontend.log
+
+# Sensitive Configuration (Safety first)
+src/main/resources/application.properties
+
+# Local distribution of Maven
+apache-maven-3.9.6/
+maven.zip
